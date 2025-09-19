@@ -1,10 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body, #root {
+  margin: 0;
+  padding: 0;
 }
 
+:root {
+  --font: "Nunito Sans", sans-serif;
+  --cursive-font: "Lavishly Yours", cursive;
+  --background: oklch(97.9% 0.021 166.113);
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--background);
+}
+
+.title-font {
+  font-family: var(--cursive-font);
+}
+
+.x {
+  color: oklab(62.256% -0.05468 -0.0109);
+}
+
+@theme {  
+  --color-teal-50: oklab(98.48400000000001% -0.02073 -0.00361); 
+  --color-teal-100: oklab(93.496% -0.02786 -0.00565);
+  --color-teal-200: oklab(87.173% -0.03608 -0.00793);  
+  --color-teal-300: oklab(79.967% -0.04246 -0.0096); 
+  --color-teal-400: oklab(72.487% -0.05108 -0.0103);  
+  --color-teal-500: oklab(62.256% -0.05468 -0.0109);
+  --color-teal-600: oklab(54.666000000000004% -0.09341 -0.00712);  
+  --color-teal-700: oklab(49.019% -0.08565 -0.00292);
+  --color-teal-800: oklab(39.448% -0.06873 -0.00256);
+  --color-teal-900: oklab(32.413% -0.05582 -0.00203);
+  --color-teal-950: oklab(28.242% -0.04782 -0.00324);
+}
+
+/* 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -23,4 +59,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
