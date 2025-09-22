@@ -4,10 +4,7 @@ import Link from 'next/link'
 import Image from "next/image"
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
+import { filterClassNames } from '@/lib/utilities'
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -23,13 +20,13 @@ export default function Navbar() {
       <Link
       href={item.href}
       aria-current={item.current ? 'page' : undefined}
-      className={classNames(
-        item.current ? 'text-teal-800 md:text-teal-800 md:p-0 md:dark:text-teal-500' : 'hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-800 md:p-0 md:dark:hover:text-teal-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700', 'text-sm font-semibold text-gray-900 rounded-sm',
+      className={filterClassNames(
+        item.current ? 'text-emerald-800 md:text-emerald-800 md:p-0 md:dark:text-emerald-500' : 'hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-800 md:p-0 md:dark:hover:text-emerald-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700', 'text-gray-900 rounded-sm',
       )}>{item.name}</Link>
     </li>
   ))
 
-  return <nav className="bg-white dark:bg-gray-950 sticky w-full z-2 border-b border-teal-700 dark:border-gray-600">
+  return <nav className="bg-white dark:bg-gray-950 sticky w-full z-2 border-b border-emerald-700 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image className="h-8 dark:invert"
@@ -38,7 +35,7 @@ export default function Navbar() {
             width={38}
             height={38}
             priority />
-            <span className="self-center text-4xl text-teal-800 font-semibold whitespace-nowrap dark:text-white title-font">Plant Cat</span>
+            <span className="self-center text-4xl text-emerald-800 font-semibold whitespace-nowrap dark:text-white title-font">Plant Cat</span>
         </Link>
         <div className="flex md:order-2">
           <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="sm:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
@@ -54,7 +51,7 @@ export default function Navbar() {
               </svg>
               <span className="sr-only">Search icon</span>
             </div>
-            <input type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-teal-400 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
+            <input type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-emerald-700 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
           </div>
           <button type="button" onClick={() => setIsOpen(!isOpen)} className="relative md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-200 focus:outline-hidden dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" aria-controls="mobile-menu" aria-expanded="false">
             <span className="absolute -inset-0.5"></span>
