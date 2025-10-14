@@ -38,4 +38,5 @@ body {
   --color-teal-800: oklab(39.448% -0.06873 -0.00256);
   --color-teal-900: oklab(32.413% -0.05582 -0.00203);
   --color-teal-950: oklab(28.242% -0.04782 -0.00324);
+  --breakpoint-xs: 500px;
 }
