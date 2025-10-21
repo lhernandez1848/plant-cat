@@ -1,9 +1,16 @@
+import SpeciesTable from "@/layout/species/SpeciesTable";
+import { getSpecies } from "@/lib/api";
+import { Suspense } from "react";
+
 export default function Species() {
+  const speciesPromise = getSpecies();
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        Species
-      </main>
-    </div>
+    <section className="max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mx-auto">
+      <h1 className="text-4xl mb-6">Species List</h1>
+      <Suspense fallback={<div>Loading species table...</div>}>
+        <SpeciesTable speciesPromise={speciesPromise} />
+      </Suspense>
+    </section>
   );
 }

@@ -25,7 +25,7 @@ export default function Card(plant : PlantProps) {
           <p className="font-normal text-gray-700"><span className="font-semibold">Family: </span>{family}</p>
           <p className="font-normal text-gray-700"><span className="font-semibold">Genus: </span>{genus}</p>
         </div>        
-        <a href={`/care/${plant.id}`} className="inline-flex font-medium items-center text-teal-600 hover:text-teal-800">
+        <a href={`/details/${plant.id}`} className="inline-flex font-medium items-center text-teal-600 hover:text-teal-800">
         Learn more 
         </a>
       </div>

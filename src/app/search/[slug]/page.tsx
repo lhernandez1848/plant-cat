@@ -1,10 +1,9 @@
 import Card from "@/components/Card";
+import { getSearchResults } from "@/lib/api";
 
 export default async function Page({params}: {params: {slug: string}}) {
   params = await params;
-  const data = await fetch(`${process.env.API_BASE_URL}/api/v2/species-list?key=${process.env.API_KEY}&q=${params.slug}`);
-  const response = await data.json();
-  const searchResponse = response.data;
+  const searchResponse = await getSearchResults(params.slug);
 
   if(searchResponse.length === 0) {
     return (
