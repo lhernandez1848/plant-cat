@@ -12,39 +12,6 @@ import {
 } from '@tanstack/react-table'
 import { useState } from 'react';
 
-// interface TableProps<TData, TValue> {
-//   columns: ColumnDef<TData, TValue>[]
-//   data: TData[]
-//   pageNumber: number
-//   lastPage: number
-//   callback: (page: number) => void
-// }
-
-// export default function MyTable<TData, TValue>({
-//   columns,
-//   data,
-//   pageNumber,
-//   lastPage,
-//   callback,
-// }: TableProps<TData, TValue>) {
-//   const [pagination, setPagination] = useState<PaginationState>({
-//     pageIndex: 0,
-//     pageSize: lastPage,
-//   })
-//   const table = useReactTable({
-//     columns,
-//     data,
-//     debugTable: true,
-//     getCoreRowModel: getCoreRowModel(),
-//     getSortedRowModel: getSortedRowModel(),
-//     getFilteredRowModel: getFilteredRowModel(),
-//     getPaginationRowModel: getPaginationRowModel(),
-//     onPaginationChange: setPagination,
-//     state: {
-//       pagination,
-//     },
-//   })
-
 interface TableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
@@ -74,11 +41,9 @@ export default function MyTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onPaginationChange: setPagination,
-    //no need to pass pageCount or rowCount with client-side pagination as it is calculated automatically
     state: {
       pagination,
     },
-    // autoResetPageIndex: false, // turn off page index reset when sorting or filtering
   })
 
   return (

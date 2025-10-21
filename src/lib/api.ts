@@ -2,7 +2,6 @@
 
 export async function getSpecies(page?: number) {
   const data = await fetch(`${process.env.API_BASE_URL}/api/v2/species-list?key=${process.env.API_KEY}&page=${page}`);
-  // const data = await fetch(`https://perenual.com/api/v2/species-list?key=sk-JvtE68c976544bc9412406&page=${page}`);
   const response = await data.json();
   return response;
 }
