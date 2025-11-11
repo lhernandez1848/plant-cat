@@ -4,35 +4,44 @@ import {
   ColumnDef
 } from '@tanstack/react-table'
 
-type Species = {
+type Diseases = {
   id: number;
   common_name: string;
   scientific_name: string;
-  family: string;
-  default_image?: { thumbnail?: string };
+  host: [string];
+  images: [{ thumbnail?: string }];
 }
 
-export const columns: ColumnDef<Species>[] = [
+export const columns: ColumnDef<Diseases>[] = [
   {
-    accessorKey: "default_image",
+    accessorKey: "images",
     header: "",
+    enableSorting: false,
     cell: ({ row }) => (
       <div>
-        <img src={row.original.default_image ? row.original.default_image.thumbnail : '/assets/default-image.jpg'} className="w-[48px] object-cover" />
+        <img src={row.original.images[0] ? row.original.images[0].thumbnail : '/assets/default-image.jpg'} className="w-[50px] object-cover" />
       </div>
     ),
   },
   {
     accessorKey: "scientific_name",
     header: "scientific name",
+    enableSorting: false,
   },
   {
     accessorKey: "common_name",
     header: "common name",
+    enableSorting: false,
   },
   {
-    accessorKey: "family",
-    header: "family",
+    accessorKey: "host",
+    header: "host",
+    cell: ({ row }) => (
+      <span>
+        {row.original.host.join(", ")}
+      </span>
+    ),
+    enableSorting: false,
   },
   {
     cell: ({ row }) => (
@@ -43,5 +52,6 @@ export const columns: ColumnDef<Species>[] = [
       </div>
     ),
     id: "link",
+    enableSorting: false,
   }
 ]
