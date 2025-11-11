@@ -3,7 +3,7 @@
 import { filterClassNames } from "@/lib/utilities";
 import { useState } from "react";
 
-export default function Accordion({ id, question, answer }: { id: string | number; question: string; answer: string }) {
+export default function Accordion({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {

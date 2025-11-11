@@ -40,14 +40,14 @@ export default function Search() {
         </svg>
         <span className="sr-only">Search</span>
       </div>
-      <div className={filterClassNames(isOpen ? "absolute right-2 w-60 z-10 bg-teal-500 p-3" : "hidden", "sm:relative rounded-lg sm:block pr-3")}>
-        {/* <div className="hidden sm:flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
+      <div className={filterClassNames(isOpen ? "absolute right-2 z-10" : "hidden", " w-60 sm:w-auto sm:relative rounded-lg sm:flex gap-2 sm:border sm:border-teal-700 bg-teal-500 sm:bg-gray-50 p-3 sm:p-0")}>
+        <div className="hidden sm:flex start-2 items-center pointer-events-none ps-3">
           <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 20 20">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
           </svg>
           <span className="sr-only">Search icon</span>
-        </div> */}
-        <input type="text" name='search' id="search-navbar" className="block w-full p-2 ps-4 sm:ps-10 text-sm text-gray-900 sm:border sm:border-teal-700 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
+        </div>
+        <input type="text" name='search' id="search-navbar" className="block w-full bg-gray-50 rounded-md p-2 text-sm text-gray-900" placeholder="Search..." />
       </div>
     </Form>
   )

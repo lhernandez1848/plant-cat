@@ -1,3 +1,5 @@
+import { capitalizeFirstLetter } from "@/lib/utilities";
+
 type PlantProps = {
   id: number;
   common_name: string;
@@ -19,13 +21,13 @@ export default function Card(plant : PlantProps) {
       <img className="rounded-t-lg" src={plant.image_url ? plant.image_url : '/assets/default-image.jpg'} alt={plant.common_name} />
       <div className="p-5 h-full flex flex-col justify-between">
         <div className="mb-3">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-teal-700">{plant.common_name}</h5>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-teal-700">{capitalizeFirstLetter(plant.common_name)}</h5>
           <p className="font-normal text-gray-700"><span className="font-semibold">Scientific name: </span>{scientificName}</p>
           <p className="font-normal text-gray-700"><span className="font-semibold">Other name: </span>{otherName}</p>
           <p className="font-normal text-gray-700"><span className="font-semibold">Family: </span>{family}</p>
           <p className="font-normal text-gray-700"><span className="font-semibold">Genus: </span>{genus}</p>
         </div>        
-        <a href={`/care/${plant.id}`} className="inline-flex font-medium items-center text-teal-600 hover:text-teal-800">
+        <a href={`/details/${plant.id}`} className="inline-flex font-medium items-center text-teal-600 hover:text-teal-800">
         Learn more 
         </a>
       </div>
