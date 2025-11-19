@@ -33,7 +33,7 @@ export default function Navbar() {
   return <nav className="bg-white sticky w-full z-2 border-b border-teal-200">
       <div className="flex flex-wrap items-center justify-between w-full py-4 px-4 sm:px-20">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center text-4xl text-teal-800 font-semibold whitespace-nowrap logo-font">Little Leaf</span>
+          <span className="self-center text-4xl text-teal-800 font-semibold whitespace-nowrap logo-font">Plant Cat</span>
         </Link>
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
           <div className="relative mt-3 md:hidden">
