@@ -8,11 +8,13 @@ export default function Species() {
   const speciesPromise = getSpecies();
 
   return (
-    <section className="max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mx-auto">
-      <h1 className="text-4xl mb-6">Species List</h1>
+    <main className="min-h-screen max-h-fit grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16">
+      <header>
+        <h1 className="text-4xl md:text-6xl mb-10 text-gray-900 title-font">Species List</h1>
+      </header>
       <Suspense fallback={<Loading />}>
         <TableSpecies promiseType={speciesPromise} columns={columns} />
       </Suspense>
-    </section>
+    </main>
   );
 }

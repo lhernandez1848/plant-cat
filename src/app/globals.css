@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 @import "tailwindcss";
 
@@ -9,21 +10,37 @@ html, body, #root {
 
 :root {
   --font: "Nunito Sans", sans-serif;
-  --cursive-font: "Lavishly Yours", cursive;
+  --title-font: "Alegreya", serif;
+  --logo-font: "Lavishly Yours", logo;
   --background: oklch(97.9% 0.021 166.113);
 }
 
 body {
   font-family: var(--font);
+}
+
+.bg-color-default {
   background-color: var(--background);
 }
 
-.title-font {
-  font-family: var(--cursive-font);
+.logo-font {
+  font-family: var(--logo-font);
 }
 
-.x {
-  color: oklab(62.256% -0.05468 -0.0109);
+.title-font {
+  font-family: var(--title-font);
+}
+
+@layer utilities {
+  .bg-disabled {
+    background-color: oklab(100% 0 -0.00011 / 0);
+  }
+  .text-fg-disabled {
+    color: oklab(60% -0.005 0.002);
+  }
+  .border-default-medium {
+    border-color: oklab(80% 0.01 -0.005);
+  }
 }
 
 @theme {  
