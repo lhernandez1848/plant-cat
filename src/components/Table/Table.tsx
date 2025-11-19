@@ -63,7 +63,7 @@ export default function MyTable<TData, TValue>({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => {
                 return (
-                  <th key={header.id} colSpan={header.colSpan} className='px-6 py-3'>
+                  <th key={header.id} colSpan={header.colSpan} className='px-4 py-3'>
                     <div
                       {...{
                         className: header.column.getCanSort()
@@ -86,7 +86,7 @@ export default function MyTable<TData, TValue>({
         <tbody>
           {table.getRowModel().rows.map(row => {
             return (
-              <tr key={row.id} className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200'>
+              <tr key={row.id} className='bg-white border-b border-gray-200'>
                 {row.getVisibleCells().map(cell => {
                   return (
                     <td key={cell.id} className='px-4 py-2 nth-last-2:w-[25%] last:w-[15%]'>

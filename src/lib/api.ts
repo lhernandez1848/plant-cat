@@ -35,3 +35,9 @@ export async function getDiseases(page?: number) {
   const response = await data.json();
   return response;
 }
+
+export async function getPlantTypesByQuery(query: string, page?: number) {
+  const data = await fetch(`${process.env.API_BASE_URL}/api/v2/species-list?key=${process.env.API_KEY}&${query}&page=${page}&`);
+  const response = await data.json();
+  return response;
+}
