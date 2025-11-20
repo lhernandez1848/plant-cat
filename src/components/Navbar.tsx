@@ -34,7 +34,7 @@ export default function Navbar() {
   return <nav className="bg-white sticky w-full z-2 border-b border-teal-200">
       <div className="flex flex-wrap items-center justify-between w-full py-4 px-4 md:px-20">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-           <Image className="h-8 dark:invert"
+           <Image className="h-8"
             src="/assets/logo.png"
             alt="Plant Cat logo"
             width={38}

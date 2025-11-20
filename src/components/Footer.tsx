@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="w-full p-4 md:py-8 md:px-40">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a href="/home" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <Image className="h-8 dark:invert"
+            <Image className="h-8"
               src="/assets/logo.png"
               alt="Plant Cat logo"
               width={38}
