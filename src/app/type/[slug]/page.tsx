@@ -21,7 +21,7 @@ export default async function PlantType({
   return (
     <main className="">
       <img src={`/assets/${slug}.jpg`} alt="background leaves" className="w-full h-90 object-cover object-center opacity-70" />
-      <div className="px-4 py-10 mx-auto grid lg:gap-8 xl:gap-0 lg:py-16 max-w-screen-xl min-h-screen max-h-fit -mt-20 bg-color-default relative">
+      <div className="px-4 py-10 mx-auto grid lg:gap-8 xl:gap-0 lg:py-16 max-w-screen min-h-screen max-h-fit -mt-20 bg-color-default relative">
         <header>
           <h1 className="text-center text-4xl md:text-6xl mb-10 text-gray-900 title-font">{capitalizeEachWord(filters.title)}</h1>
         </header>

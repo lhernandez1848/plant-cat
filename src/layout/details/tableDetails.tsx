@@ -6,7 +6,7 @@ type TableDetailsProps = {
 };
 
 export default function TableDetails({ data }: { data: TableDetailsProps[] }) {
-  return <table className="my-6 w-4/5">
+  return <table className="my-6 md:w-4/5">
     <tbody>
       {data.map((item, index) => (
         <tr className="odd:bg-white even:bg-teal-100 border-b border-gray-200" key={item.header + index}>

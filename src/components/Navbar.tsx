@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { filterClassNames } from '@/lib/utilities'
 import Search from '@/components/Search'
+import Image from "next/image"
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -31,8 +32,14 @@ export default function Navbar() {
   ))
 
   return <nav className="bg-white sticky w-full z-2 border-b border-teal-200">
-      <div className="flex flex-wrap items-center justify-between w-full py-4 px-4 sm:px-20">
+      <div className="flex flex-wrap items-center justify-between w-full py-4 px-4 md:px-20">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+           <Image className="h-8 dark:invert"
+            src="/assets/logo.png"
+            alt="Plant Cat logo"
+            width={38}
+            height={38}
+            priority />
           <span className="self-center text-4xl text-teal-800 font-semibold whitespace-nowrap logo-font">Plant Cat</span>
         </Link>
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">

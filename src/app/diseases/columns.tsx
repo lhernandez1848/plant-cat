@@ -19,18 +19,18 @@ export const columns: ColumnDef<Diseases>[] = [
     enableSorting: false,
     cell: ({ row }) => (
       <div>
-        <img src={row.original.images[0] ? row.original.images[0].thumbnail : '/assets/default-image.jpg'} className="w-[50px] object-cover" />
+        <img src={row.original.images[0] ? row.original.images[0].thumbnail : '/assets/default-image.jpg'} className="w-[80px] object-cover" />
       </div>
     ),
   },
   {
-    accessorKey: "scientific_name",
-    header: "scientific name",
+    accessorKey: "common_name",
+    header: "common name",
     enableSorting: false,
   },
   {
-    accessorKey: "common_name",
-    header: "common name",
+    accessorKey: "scientific_name",
+    header: "scientific name",
     enableSorting: false,
   },
   {
@@ -41,17 +41,6 @@ export const columns: ColumnDef<Diseases>[] = [
         {row.original.host.join(", ")}
       </span>
     ),
-    enableSorting: false,
-  },
-  {
-    cell: ({ row }) => (
-      <div>
-        <a href={`/details/${row.original.id}`} className="inline-flex font-medium items-center text-teal-600 hover:text-teal-800">
-          Read More
-        </a>
-      </div>
-    ),
-    id: "link",
     enableSorting: false,
   }
 ]

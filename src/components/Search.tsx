@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function Search() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
   const ref = useRef<any>(null);
   
   useEffect(() => {
@@ -23,31 +24,33 @@ export default function Search() {
   }, [ref])
 
   const handleSubmit = (formData: FormData) => {
+    setIsSearching(true);
+    setIsOpen(false);
     let query = formData.get('search');
-    if(!query || query.toString().trim() === '') return;
-    router.push(`/search/${formData.get('search')}`);
-  }
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
+    if(!query || query.toString().trim() === '') {
+      return;
+    } else {
+      router.push(`/search/${formData.get('search')}`);
+      setIsSearching(false);
+    }
   }
 
   return (
     <Form action={handleSubmit} className="relative" ref={ref}>
-      <div data-collapse-toggle="navbar-search" onClick={handleClick} className="sm:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+      <div data-collapse-toggle="navbar-search" onClick={() => setIsOpen(!isOpen)} className="sm:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
         <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
         </svg>
         <span className="sr-only">Search</span>
       </div>
-      <div className={filterClassNames(isOpen ? "absolute right-2 z-10" : "hidden", " w-60 sm:w-auto sm:relative rounded-lg sm:flex gap-2 sm:border sm:border-teal-700 bg-teal-500 sm:bg-gray-50 p-3 sm:p-0")}>
+      <div className={filterClassNames(isOpen ? "absolute right-2 z-10" : "hidden", " w-60 sm:w-auto sm:relative rounded-lg sm:flex gap-2 sm:border sm:border-teal-700 bg-teal-500 sm:bg-gray-50 p-3 sm:p-0 focus-within:border-2 focus-within:border-teal-700")}>
         <div className="hidden sm:flex start-2 items-center pointer-events-none ps-3">
           <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 20 20">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
           </svg>
           <span className="sr-only">Search icon</span>
         </div>
-        <input type="text" name='search' id="search-navbar" className="block w-full bg-gray-50 rounded-md p-2 text-sm text-gray-900" placeholder="Search..." />
+        <input type="text" name='search' id="search-navbar" className="block w-full bg-gray-50 rounded-md p-2 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Search..." disabled={isSearching} />
       </div>
     </Form>
   )
