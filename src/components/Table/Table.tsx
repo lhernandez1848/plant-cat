@@ -89,7 +89,7 @@ export default function MyTable<TData, TValue>({
               <tr key={row.id} className='bg-white border-b border-gray-200'>
                 {row.getVisibleCells().map(cell => {
                   return (
-                    <td key={cell.id} className='px-4 py-2 nth-last-2:w-[25%] last:w-[15%]'>
+                    <td key={cell.id} className='px-4 py-2'>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

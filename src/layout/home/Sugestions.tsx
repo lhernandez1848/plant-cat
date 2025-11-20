@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Sugestions() {
   return (
-    <section className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16">
+    <section className="grid max-w-screen px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16">
       <h3 className="text-4xl text-gray-900 mb-10">Your plant journey starts here</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {SUGGESTIONS.map((link, i) => (
