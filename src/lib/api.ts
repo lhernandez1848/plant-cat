@@ -20,8 +20,7 @@ export async function getSearchResults(search: string) {
 
 export async function getSpeciesDetails(id: number) {
   const data = await fetch(`${process.env.API_BASE_URL}/api/v2/species/details/${id}?key=${process.env.API_KEY}`);
-  const response = await data.json();
-  return response;
+  return data;
 }
 
 export async function getCareTips(id: number) {
